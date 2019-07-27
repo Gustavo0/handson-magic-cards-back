@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,25 +18,35 @@ import lombok.NoArgsConstructor;
 @Table(name = "magicexpansion")
 public class Expansion {
 	@Id
-	@Column(name = "expansionId")
+	@Column(name = "expansionid")
 	private Integer expansionId;
+	
 	@Column(name = "name", columnDefinition = "text")
 	private String name;
+	
 	@Column(name = "ptbrname", columnDefinition = "text", nullable = true)
 	private String ptBrName;
+	
 	@Column(name = "linkname", columnDefinition = "text")
 	private String linkName;
+	
 	@Column(name = "searchname", columnDefinition = "text")
 	private String searchName;
+	
 	@Column(name = "code")
 	private String code;
-	@Column(name = "launchDate", columnDefinition = "date")
+	
+	@Column(name = "launchdate", columnDefinition = "date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate launchDate;
-	@Column(name = "expansionCategoryId", columnDefinition = "smallint")
+	
+	@Column(name = "expansioncategoryid", columnDefinition = "smallint")
 	private Integer expansionCategoryId;
-	@Column(name = "isPromo", columnDefinition = "bit", nullable = true)
+	
+	@Column(name = "ispromo", columnDefinition = "bit(1)")
 	private Boolean isPromo;
-	@Column(name = "isLegal", columnDefinition = "bit", nullable = true)
+	
+	@Column(name = "islegal", columnDefinition = "bit(1)")
 	private Boolean isLegal;
 
 }
