@@ -30,9 +30,6 @@ public class Expansion {
 	@Column(name = "linkname", columnDefinition = "text")
 	private String linkName;
 	
-	@Column(name = "searchname", columnDefinition = "text")
-	private String searchName;
-	
 	@Column(name = "code")
 	private String code;
 	
