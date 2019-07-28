@@ -5,5 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface CardRepository extends PagingAndSortingRepository<Card,String> {
 
-	void deleteByExpansionExpansionId(Integer id);
+	void deleteByExpansionId(Integer id);
 }
