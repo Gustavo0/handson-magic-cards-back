@@ -41,9 +41,9 @@ public class Expansion {
 	private Integer expansionCategoryId;
 	
 	@Column(name = "ispromo", columnDefinition = "bit(1)")
-	private boolean isPromo;
+	private boolean promo;
 	
 	@Column(name = "islegal", columnDefinition = "bit(1)")
-	private boolean isLegal;
+	private boolean legal;
 
 }
