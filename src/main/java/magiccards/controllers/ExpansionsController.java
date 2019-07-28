@@ -53,7 +53,7 @@ public class ExpansionsController {
 	@Transactional
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable("id")Integer id) {
-		cardsRepository.deleteByExpansionExpansionId(id);
+		cardsRepository.deleteByExpansionId(id);
 		expansionRepository.delete(id);
 	}
 }
