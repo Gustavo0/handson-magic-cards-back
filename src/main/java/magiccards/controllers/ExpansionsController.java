@@ -26,7 +26,7 @@ public class ExpansionsController {
 	private ExpansionRepository expansionRepository;
 
 	@GetMapping(value = "{id}")
-	public Expansion getExpansionById(@PathVariable("id") String expansionId) {
+	public Expansion getExpansionById(@PathVariable("id") Integer expansionId) {
 		return expansionRepository.findOne(expansionId);
 	}
 
@@ -50,7 +50,7 @@ public class ExpansionsController {
 	}
 
 	@DeleteMapping(value = "{id}")
-	public void delete(@PathVariable("id")String id) {
+	public void delete(@PathVariable("id")Integer id) {
 		expansionRepository.delete(id);
 	}
 }
