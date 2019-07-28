@@ -25,7 +25,7 @@ public class Expansion {
 	private String name;
 	
 	@Column(name = "ptbrname", columnDefinition = "text", nullable = true)
-	private String ptBrName;
+	private String portugueseName;
 	
 	@Column(name = "linkname", columnDefinition = "text")
 	private String linkName;
