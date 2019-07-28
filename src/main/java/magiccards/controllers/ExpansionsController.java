@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import magiccards.entities.Expansion;
+import magiccards.repositories.CardRepository;
 import magiccards.repositories.ExpansionRepository;
 
 @RestController
@@ -20,6 +21,9 @@ public class ExpansionsController {
 
 	@Autowired
 	private ExpansionRepository expansionRepository;
+	
+	@Autowired
+	private CardRepository cardsRepository;
 
 	@RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
 	public Expansion getExpansionById(@PathVariable("id") Integer expansionId) {
@@ -47,8 +51,7 @@ public class ExpansionsController {
 
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable("id")Integer id) {
-		Expansion extension = expansionRepository.findOne(id);
-		extension.setExpansionCategoryId(null);
+		cardsRepository.deleteByExpansionExpansionId(id);
 		expansionRepository.delete(id);
 	}
 }
