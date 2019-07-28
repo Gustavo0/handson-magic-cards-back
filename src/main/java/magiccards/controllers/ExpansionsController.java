@@ -40,7 +40,7 @@ public class ExpansionsController {
 		expansionRepository.save(expansion);
 	}
 
-	@RequestMapping(value = "", method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(value = "", method = RequestMethod.PUT, consumes = "application/json")
 	public void update(@RequestBody Expansion expansion) {
 		expansionRepository.save(expansion);
 	}
