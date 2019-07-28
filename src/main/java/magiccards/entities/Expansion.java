@@ -1,6 +1,6 @@
 package magiccards.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,15 +35,15 @@ public class Expansion {
 	
 	@Column(name = "launchdate", columnDefinition = "date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate launchDate;
+	private Date launchDate;
 	
 	@Column(name = "expansioncategoryid", columnDefinition = "smallint")
 	private Integer expansionCategoryId;
 	
 	@Column(name = "ispromo", columnDefinition = "bit(1)")
-	private Boolean isPromo;
+	private boolean isPromo;
 	
 	@Column(name = "islegal", columnDefinition = "bit(1)")
-	private Boolean isLegal;
+	private boolean isLegal;
 
 }
